@@ -354,3 +354,4 @@ current = true
 limit_left = 0
 limit_top = 0
 limit_bottom = 800
+smoothing_enabled = true
