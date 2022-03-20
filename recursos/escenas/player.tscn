@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://recursos/img/player/brazoIzq.png" type="Texture" id=1]
 [ext_resource path="res://recursos/img/player/cuerpo.png" type="Texture" id=2]
 [ext_resource path="res://recursos/img/player/brazoDer.png" type="Texture" id=3]
 [ext_resource path="res://recursos/img/player/ojo.png" type="Texture" id=4]
 [ext_resource path="res://recursos/img/player/pie.png" type="Texture" id=5]
+[ext_resource path="res://recursos/escenas/player/player.gd" type="Script" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Caminando"
@@ -122,6 +123,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 60, 10 ), Vector2( 60, 14 ), Vector2( 60, 10 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("pieIzq:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -23, 46 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("pieDer:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 23, 46 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -234,45 +259,53 @@ tracks/8/keys = {
 "values": [ Vector2( 60, 10 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 50, 60 )
+
 [node name="player" type="KinematicBody2D"]
+script = ExtResource( 6 )
 
-[node name="cuerpo" type="Node2D" parent="."]
+[node name="partesCuerpo" type="Node2D" parent="."]
 
-[node name="brazoIzq" type="Sprite" parent="cuerpo"]
+[node name="brazoIzq" type="Sprite" parent="partesCuerpo"]
 position = Vector2( 60, 10 )
 rotation = 0.523599
 texture = ExtResource( 1 )
 offset = Vector2( 0, 22 )
 
-[node name="pieIzq" type="Sprite" parent="cuerpo"]
+[node name="pieIzq" type="Sprite" parent="partesCuerpo"]
 position = Vector2( -23, 46 )
 texture = ExtResource( 5 )
 offset = Vector2( 0, 22 )
 
-[node name="pieDer" type="Sprite" parent="cuerpo"]
+[node name="pieDer" type="Sprite" parent="partesCuerpo"]
 position = Vector2( 23, 46 )
 texture = ExtResource( 5 )
 offset = Vector2( 0, 22 )
 
-[node name="cuerpo" type="Sprite" parent="cuerpo"]
+[node name="cuerpo" type="Sprite" parent="partesCuerpo"]
 position = Vector2( 0, 8 )
 texture = ExtResource( 2 )
 
-[node name="brazoDer" type="Sprite" parent="cuerpo"]
+[node name="brazoDer" type="Sprite" parent="partesCuerpo"]
 position = Vector2( -45, 10 )
 rotation = -0.523599
 texture = ExtResource( 3 )
 offset = Vector2( 0, 22 )
 
-[node name="ojoIzq" type="Sprite" parent="cuerpo"]
+[node name="ojoIzq" type="Sprite" parent="partesCuerpo"]
 position = Vector2( 34, -10 )
 texture = ExtResource( 4 )
 
-[node name="ojoDer" type="Sprite" parent="cuerpo"]
+[node name="ojoDer" type="Sprite" parent="partesCuerpo"]
 position = Vector2( -8, -10 )
 texture = ExtResource( 4 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="cuerpo"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="partesCuerpo"]
 anims/Caminando = SubResource( 1 )
 anims/IDLE = SubResource( 3 )
 anims/RESET = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2, 18 )
+shape = SubResource( 4 )
