@@ -284,7 +284,7 @@ tracks/8/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 50, 60 )
+extents = Vector2( 42.8572, 60 )
 
 [node name="player" type="KinematicBody2D"]
 scale = Vector2( 0.7, 0.7 )
@@ -332,22 +332,19 @@ anims/IDLE = SubResource( 3 )
 anims/RESET = SubResource( 2 )
 
 [node name="colision" type="CollisionShape2D" parent="."]
-position = Vector2( -2, 18 )
+position = Vector2( 0, 21.4286 )
+scale = Vector2( 0.999999, 0.999999 )
 shape = SubResource( 4 )
 
-[node name="RayCast2D2" type="RayCast2D" parent="colision"]
-position = Vector2( 49, 90 )
-scale = Vector2( 1, 1 )
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2( 30.4285, 52 )
+scale = Vector2( 0.999999, 0.999999 )
 enabled = true
-exclude_parent = false
-cast_to = Vector2( 0, 10 )
 
-[node name="RayCast2D" type="RayCast2D" parent="colision"]
-position = Vector2( -49, 90 )
-scale = Vector2( 1, 1 )
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( -29.5714, 52 )
+scale = Vector2( 0.999999, 0.999999 )
 enabled = true
-exclude_parent = false
-cast_to = Vector2( 0, 10 )
 
 [node name="camara" type="Camera2D" parent="."]
 current = true
@@ -355,3 +352,10 @@ limit_left = 0
 limit_top = 0
 limit_bottom = 800
 smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="colision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 21.4286 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 4 )
