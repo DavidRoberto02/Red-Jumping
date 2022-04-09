@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-onready var corazonSize = $Container/corazones.rect_size.x
+onready var corazonSize = $Control/VBoxContainer/corazones.rect_size.x
 
 func _ready():
 	Global.UI_player = self

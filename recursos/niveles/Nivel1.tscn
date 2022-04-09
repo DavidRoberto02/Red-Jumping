@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://recursos/escenas/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://recursos/tilesets/tileset_01/tileset_01.tres" type="TileSet" id=2]
 [ext_resource path="res://recursos/backgrounds/background_01.tscn" type="PackedScene" id=3]
 [ext_resource path="res://recursos/enemigos/Sierra.tscn" type="PackedScene" id=4]
-[ext_resource path="res://recursos/ui/UI_player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://recursos/enemigos/Mace.tscn" type="PackedScene" id=5]
 [ext_resource path="res://recursos/bienes/moneda.tscn" type="PackedScene" id=6]
+[ext_resource path="res://recursos/musica/musica_de_fondo.ogg" type="AudioStream" id=7]
+[ext_resource path="res://recursos/enemigos/bolaConEspinas.tscn" type="PackedScene" id=8]
 
 [node name="Node" type="Node"]
 
@@ -14,7 +16,15 @@
 [node name="enemigos" type="Node2D" parent="."]
 
 [node name="Sierra" parent="enemigos" instance=ExtResource( 4 )]
-position = Vector2( 350, 720 )
+position = Vector2( -210, 760 )
+
+[node name="Mace" parent="enemigos" instance=ExtResource( 5 )]
+position = Vector2( -130, 70 )
+
+[node name="bolaConEspinas" parent="enemigos" instance=ExtResource( 8 )]
+position = Vector2( 1210, 260 )
+modo = "swing"
+tiempoSwing = 2.5
 
 [node name="monedas" type="Node2D" parent="."]
 
@@ -30,14 +40,25 @@ position = Vector2( 660, 590 )
 [node name="moneda4" parent="monedas" instance=ExtResource( 6 )]
 position = Vector2( 840, 570 )
 
+[node name="moneda5" parent="monedas" instance=ExtResource( 6 )]
+position = Vector2( 1120, 500 )
+
+[node name="moneda6" parent="monedas" instance=ExtResource( 6 )]
+position = Vector2( 1240, 500 )
+
+[node name="moneda7" parent="monedas" instance=ExtResource( 6 )]
+position = Vector2( 1360, 500 )
+
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 0.2, 0.2 )
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 256, 256 )
 format = 1
-tile_data = PoolIntArray( 589846, 10, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 655381, 10, 0, 655382, 9, 0, 655383, 1, 0, 655384, 1, 0, 655385, 1, 0, 655386, 1, 0, 720916, 10, 0, 720917, 9, 0, 720918, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0, 720922, 1, 0, 786451, 10, 0, 786452, 9, 0, 786453, 1, 0, 786454, 1, 0, 786455, 1, 0, 786456, 1, 0, 786457, 1, 0, 786458, 1, 0, 851986, 10, 0, 851987, 9, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 1, 0, 851993, 1, 0, 851994, 1, 0, 917504, 14, 0, 917505, 14, 0, 917506, 14, 0, 917507, 14, 0, 917508, 14, 0, 917509, 14, 0, 917510, 14, 0, 917511, 14, 0, 917512, 14, 0, 917513, 14, 0, 917514, 14, 0, 917515, 14, 0, 917516, 14, 0, 917517, 14, 0, 917518, 14, 0, 917519, 14, 0, 917520, 14, 0, 917521, 14, 0, 917522, 14, 0, 917523, 14, 0, 917524, 14, 0, 917525, 14, 0, 917526, 14, 0, 917527, 14, 0, 917528, 14, 0, 917529, 14, 0, 917530, 14, 0, 917531, 14, 0, 917532, 14, 0, 917533, 14, 0, 917534, 14, 0, 917535, 14, 0, 917536, 14, 0, 917537, 14, 0, 917538, 14, 0, 917539, 14, 0, 917540, 14, 0, 917541, 14, 0, 917542, 14, 0, 917543, 14, 0, 917544, 14, 0, 917545, 14, 0, 917546, 14, 0, 917547, 14, 0, 917548, 14, 0, 917549, 14, 0, 917550, 14, 0, 917551, 14, 0, 917552, 14, 0, 917553, 14, 0, 917554, 14, 0, 917555, 14, 0, 917556, 14, 0, 917557, 14, 0, 917558, 14, 0, 917559, 14, 0, 917560, 14, 0, 917561, 14, 0, 917562, 14, 0, 917563, 14, 0, 917564, 14, 0, 917565, 14, 0, 917566, 14, 0, 917567, 14, 0, 917568, 14, 0, 917569, 14, 0, 917570, 14, 0, 917571, 14, 0, 917572, 14, 0, 917573, 14, 0, 917574, 14, 0, 917575, 14, 0, 917576, 14, 0, 917577, 14, 0, 917578, 14, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 983070, 1, 0, 983071, 1, 0, 983072, 1, 0, 983073, 1, 0, 983074, 1, 0, 983075, 1, 0, 983076, 1, 0, 983077, 1, 0, 983078, 1, 0, 983079, 1, 0, 983080, 1, 0, 983081, 1, 0, 983082, 1, 0, 983083, 1, 0, 983084, 1, 0, 983085, 1, 0, 983086, 1, 0, 983087, 1, 0, 983088, 1, 0, 983089, 1, 0, 983090, 1, 0, 983091, 1, 0, 983092, 1, 0, 983093, 1, 0, 983094, 1, 0, 983095, 1, 0, 983096, 1, 0, 983097, 1, 0, 983098, 1, 0, 983099, 1, 0, 983100, 1, 0, 983101, 1, 0, 983102, 1, 0, 983103, 1, 0, 983104, 1, 0, 983105, 1, 0, 983106, 1, 0, 983107, 1, 0, 983108, 1, 0, 983109, 1, 0, 983110, 1, 0, 983111, 1, 0, 983112, 1, 0, 983113, 1, 0, 983114, 1, 0 )
+tile_data = PoolIntArray( 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 164, 638 )
 
-[node name="UI_player" parent="." instance=ExtResource( 5 )]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -25.0

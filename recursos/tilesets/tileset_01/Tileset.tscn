@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://recursos/img/tiles/Grass.png" type="Texture" id=1]
 [ext_resource path="res://recursos/img/tiles/DirtDown.png" type="Texture" id=2]
@@ -22,9 +22,30 @@
 [ext_resource path="res://recursos/img/tiles/GrassLeft.png" type="Texture" id=20]
 [ext_resource path="res://recursos/img/tiles/GrassJoinHillRight2.png" type="Texture" id=21]
 [ext_resource path="res://recursos/img/tiles/GrassJoinHillRight.png" type="Texture" id=22]
+[ext_resource path="res://recursos/img/environment/agua/7.png" type="Texture" id=23]
+[ext_resource path="res://recursos/img/environment/agua/9.png" type="Texture" id=24]
+[ext_resource path="res://recursos/img/environment/agua/8.png" type="Texture" id=25]
+[ext_resource path="res://recursos/img/environment/agua/1.png" type="Texture" id=26]
+[ext_resource path="res://recursos/img/environment/agua/14.png" type="Texture" id=27]
+[ext_resource path="res://recursos/img/environment/agua/3.png" type="Texture" id=28]
+[ext_resource path="res://recursos/img/environment/agua/6.png" type="Texture" id=29]
+[ext_resource path="res://recursos/img/environment/agua/12.png" type="Texture" id=30]
+[ext_resource path="res://recursos/img/environment/agua/5.png" type="Texture" id=31]
+[ext_resource path="res://recursos/img/environment/agua/4.png" type="Texture" id=32]
+[ext_resource path="res://recursos/img/environment/agua/13.png" type="Texture" id=33]
+[ext_resource path="res://recursos/img/environment/agua/11.png" type="Texture" id=34]
+[ext_resource path="res://recursos/img/environment/agua/2.png" type="Texture" id=35]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 128, 128 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 35 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 34 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Tileset" type="Node2D"]
 
@@ -62,6 +83,8 @@ position = Vector2( 1784, 193 )
 texture = ExtResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite7"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite7/StaticBody2D"]
 shape = SubResource( 1 )
@@ -71,6 +94,8 @@ position = Vector2( 2213, 299 )
 texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite8"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite8/StaticBody2D"]
 shape = SubResource( 1 )
@@ -80,6 +105,8 @@ position = Vector2( 2634, 284 )
 texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite9"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite9/StaticBody2D"]
 shape = SubResource( 1 )
@@ -89,6 +116,8 @@ position = Vector2( 3361, 677 )
 texture = ExtResource( 10 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite10"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite10/StaticBody2D"]
 shape = SubResource( 1 )
@@ -99,6 +128,8 @@ position = Vector2( 3361, 421 )
 texture = ExtResource( 11 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite11"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite11/StaticBody2D"]
 position = Vector2( 0, -1 )
@@ -110,6 +141,8 @@ position = Vector2( 3880, 501 )
 texture = ExtResource( 12 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite12"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite12/StaticBody2D"]
 position = Vector2( 0, 0.0625 )
@@ -121,6 +154,8 @@ position = Vector2( 3880, 245 )
 texture = ExtResource( 14 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite13"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite13/StaticBody2D"]
 position = Vector2( 0, -1 )
@@ -132,6 +167,8 @@ position = Vector2( 4328, 1063 )
 texture = ExtResource( 13 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite14"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite14/StaticBody2D"]
 shape = SubResource( 1 )
@@ -142,6 +179,8 @@ position = Vector2( 4684, 1080 )
 texture = ExtResource( 15 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite15"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite15/StaticBody2D"]
 shape = SubResource( 1 )
@@ -152,6 +191,8 @@ position = Vector2( 5106, 1095 )
 texture = ExtResource( 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite16"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite16/StaticBody2D"]
 shape = SubResource( 1 )
@@ -162,6 +203,8 @@ position = Vector2( 5106, 1095 )
 texture = ExtResource( 21 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite17"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite17/StaticBody2D"]
 shape = SubResource( 1 )
@@ -172,6 +215,8 @@ position = Vector2( 5477, 1112 )
 texture = ExtResource( 17 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite18"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite18/StaticBody2D"]
 shape = SubResource( 1 )
@@ -182,6 +227,8 @@ position = Vector2( 5867, 1128 )
 texture = ExtResource( 22 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite19"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite19/StaticBody2D"]
 shape = SubResource( 1 )
@@ -192,6 +239,8 @@ position = Vector2( 6295, 1150 )
 texture = ExtResource( 20 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite20"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite20/StaticBody2D"]
 shape = SubResource( 1 )
@@ -202,6 +251,8 @@ position = Vector2( 6703, 1134 )
 texture = ExtResource( 20 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite21"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite21/StaticBody2D"]
 shape = SubResource( 1 )
@@ -212,6 +263,8 @@ position = Vector2( 7203, 1154 )
 texture = ExtResource( 19 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite22"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite22/StaticBody2D"]
 shape = SubResource( 1 )
@@ -222,7 +275,16 @@ position = Vector2( 7619, 1282 )
 texture = ExtResource( 18 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite23"]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite23/StaticBody2D"]
 shape = SubResource( 1 )
 one_way_collision = true
+
+[node name="Agua" type="AnimatedSprite" parent="."]
+position = Vector2( 8240, 1361 )
+frames = SubResource( 2 )
+frame = 9
+speed_scale = 4.0
+playing = true

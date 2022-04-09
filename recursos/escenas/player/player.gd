@@ -15,7 +15,6 @@ var monedas = 0
 
 func _ready():
 	Global.player = self
-	$Area2D.connect("area_entered", self, "_on_area_entered")
 	set_process(true)
 
 func _process(delta):
@@ -44,6 +43,9 @@ func gestionarMovimiento():
 		saltando = true
 		motion.y = direccion.y * -ALTURA_SALTO
 	
+	if position.y > Global.get_screen_size().y + 500:
+		get_tree().reload_current_scene()
+	
 func gestionarAnimaciones():
 	if direccion.x != 0:
 		$partesCuerpo/AnimationPlayer.play("Caminando")
@@ -61,15 +63,9 @@ func gestionarColisiones():
 	else:
 		enElSuelo = false
 
-func _on_area_entered(area):
-	if area.is_in_group("enemigo"):
-		lastimar()
-	
-	if area.is_in_group("moneda"):
-		monedas = monedas + 1
-		area.get_parent().queue_free()
-	
-	
+func destruir_item():
+	print("hello")
+	pass
 	
 
 func lastimar():
@@ -80,4 +76,4 @@ func lastimar():
 	else:
 		print("muerto")
 	
-	Global.UI_player.refrescarUI()
+	#Global.UI_player.refrescarUI()
