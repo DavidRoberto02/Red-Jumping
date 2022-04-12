@@ -14,7 +14,9 @@ func _ready():
 func on_area_entered(area):
 	if area.is_in_group("player"):
 		if !cerrada:
-			Global.fade.crecer()
+			if Global.fade && Global.nivel:
+				Global.fade.escenaARedirigir = Global.nivel.sigNivel
+				Global.fade.crecer()
 
 func refrescarPuerta():
 	if Global.nivel && Global.player:
