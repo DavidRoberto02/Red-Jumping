@@ -6,7 +6,7 @@ func _ready():
 
 func on_area_entered(area):
 	if area.is_in_group("player"):
-		Global.monedas = Global.monedas + 1
+		Global.incrementar_monedas(1)
 		$Tween.interpolate_property(self, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 0.3, Tween.TRANS_SINE, Tween.EASE_OUT)
 		$Tween.start()
 		$fx_moneda.play()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sierra_girando.ogg-1beb9aca9b88714b3d4390608148321a.oggstr"
+
+[deps]
+
+source_file="res://recursos/fx/enemigos/Sierra/Sierra_girando.ogg"
+dest_files=[ "res://.import/Sierra_girando.ogg-1beb9aca9b88714b3d4390608148321a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

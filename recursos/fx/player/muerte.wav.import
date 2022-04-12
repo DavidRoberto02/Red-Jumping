@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/muerte.wav-07b7d303cb6f4f2042a514dd4a6d33bc.sample"
+
+[deps]
+
+source_file="res://recursos/fx/player/muerte.wav"
+dest_files=[ "res://.import/muerte.wav-07b7d303cb6f4f2042a514dd4a6d33bc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
