@@ -52,6 +52,7 @@ offset = Vector2( 0, 300 )
 
 [node name="terreno1" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.5, 1 )
+motion_offset = Vector2( 0, 44 )
 motion_mirroring = Vector2( 1152, 0 )
 
 [node name="Sprite" type="Sprite" parent="terreno1"]

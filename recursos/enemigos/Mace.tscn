@@ -42,3 +42,4 @@ one_shot = true
 
 [node name="fx_aterrizar" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = 18.0

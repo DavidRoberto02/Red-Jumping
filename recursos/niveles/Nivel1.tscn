@@ -6,12 +6,12 @@
 [ext_resource path="res://recursos/enemigos/Sierra.tscn" type="PackedScene" id=4]
 [ext_resource path="res://recursos/enemigos/Mace.tscn" type="PackedScene" id=5]
 [ext_resource path="res://recursos/bienes/moneda.tscn" type="PackedScene" id=6]
-[ext_resource path="res://recursos/musica/musica_de_fondo.ogg" type="AudioStream" id=7]
 [ext_resource path="res://recursos/enemigos/bolaConEspinas.tscn" type="PackedScene" id=8]
 [ext_resource path="res://recursos/ui/fade.tscn" type="PackedScene" id=9]
 [ext_resource path="res://recursos/enemigos/espina.tscn" type="PackedScene" id=10]
 [ext_resource path="res://recursos/environment/puerta.tscn" type="PackedScene" id=11]
 [ext_resource path="res://recursos/scripts/environment/Nivel.gd" type="Script" id=12]
+[ext_resource path="res://recursos/ui/UI_player.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -20,7 +20,7 @@ _data = {
 
 [node name="Node" type="Node"]
 script = ExtResource( 12 )
-monedasParaAbrir = 2
+monedasParaAbrir = 27
 sigNivel = "res://recursos/niveles/MenuPrincipal.tscn"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
@@ -103,7 +103,7 @@ position = Vector2( 7010, 710 )
 position = Vector2( 7310, 710 )
 
 [node name="moneda26" parent="monedas" instance=ExtResource( 6 )]
-position = Vector2( 7520, 610 )
+position = Vector2( 7460, 610 )
 
 [node name="moneda27" parent="monedas" instance=ExtResource( 6 )]
 position = Vector2( 7550, 610 )
@@ -290,11 +290,9 @@ position = Vector2( 7760, 750 )
 position = Vector2( 7680, 600 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 640 )
+position = Vector2( 110, 640 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = -25.0
+[node name="UI_player" parent="." instance=ExtResource( 13 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

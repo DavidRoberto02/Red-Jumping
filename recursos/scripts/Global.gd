@@ -7,9 +7,13 @@ var UI_player
 var monedasActuales = 0
 var camara
 var puerta
+var musica_de_fondo
 
 func _ready():
-	pass
+	musica_de_fondo = AudioStreamPlayer.new()
+	add_child(musica_de_fondo)
+	musica_de_fondo.stream = load("res://recursos/musica/musica_de_fondo.ogg")
+	musica_de_fondo.play()
 
 func _process(delta):
 	pass
@@ -23,4 +27,6 @@ func incrementar_monedas(nuevasMonedas):
 	player.monedasActuales += nuevasMonedas
 	if puerta:
 		puerta.refrescarPuerta()
+		if Global.UI_player:
+			Global.UI_player.refrescarUI()
 

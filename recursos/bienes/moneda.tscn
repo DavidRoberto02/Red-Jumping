@@ -36,7 +36,7 @@ script = ExtResource( 18 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 1 )
-frame = 3
+frame = 11
 speed_scale = 4.0
 playing = true
 
@@ -47,5 +47,6 @@ shape = SubResource( 2 )
 
 [node name="fx_moneda" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+volume_db = 6.0
 
 [node name="Tween" type="Tween" parent="."]

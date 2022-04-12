@@ -86,15 +86,15 @@ func gestionarColisiones():
 func lastimar():
 	if herible && !muerto:
 		herible = false
-		#$Area2D.monitoring = false
+		$Area2D.monitoring = false
 		vidas = vidas - 1
+		if Global.UI_player:
+			Global.UI_player.refrescarUI()
 		if vidas > 0:
 			$AnimationPlayer.play("herido")
 			$fx_herido.play()
 		else:
 			morir()
-	
-	#Global.UI_player.refrescarUI()
 
 func morir():
 	muerto = true
